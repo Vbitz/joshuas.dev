@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  lang="$lang$"
+  xml:lang="$lang$"
+  $if(dir)$
+  dir="$dir$"
+  $endif$
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$ $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$ $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+
+    <link rel="stylesheet" href="/static/site.css" />
+
+    $for(header-includes)$ $header-includes$ $endfor$
+
+    <!-- -->
+
+    $if(highlighting-css)$
+    <style type="text/css">
+      /* */
+      $highlighting-css$
+      /* */
+    </style>
+    $endif$
+
+    <!-- -->
+
+    $if(math)$ $math$ $endif$
+
+    <!-- -->
+  </head>
+  <body>
+    $for(include-before)$ $include-before$ $endfor$
+
+    <!-- -->
+
+    <div class="navbar">
+      <span class="brand"><a href="/">Joshua D. Scarsbrook</a></span>
+      <nav>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li><a href="/posts.html">Posts</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <main>
+      $if(title)$
+      <header id="title-block-header">
+        <h1 class="title">
+          $title$ $if(date)$
+          <p class="date">$date$</p>
+          $endif$
+        </h1>
+      </header>
+      $endif$
+
+      <!-- -->
+
+      $if(toc)$
+      <nav id="$idprefix$TOC">$table-of-contents$</nav>
+      $endif$
+
+      <!-- -->
+
+      $body$
+
+      <!-- -->
+
+      $for(include-after)$ $include-after$ $endfor$
+    </main>
+  </body>
+</html>
