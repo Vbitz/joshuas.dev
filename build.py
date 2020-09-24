@@ -17,7 +17,7 @@ def resolve_path(*args):
 
 TEMPLATES_PATH = resolve_path(os.path.dirname(__file__), "templates")
 
-PUBLIC_PATH = resolve_path(os.path.dirname(__file__), "public")
+PUBLIC_PATH = resolve_path(os.path.dirname(__file__), "docs")
 
 HTML_TEMPLATE_PATH = resolve_path(TEMPLATES_PATH, "post.html")
 
